@@ -1,0 +1,23 @@
+﻿
+@using Dekorasyon_web.Models.Siniflar
+@model List<Blog>
+
+<div class="padding1">
+    <h4>En Beğendiğim Yerler</h4>
+    <div class="box-left">
+        @foreach (var x in Model)
+        {
+            <div class="bot-img">
+                <img src="@x.BlogImage" style="width:120px; height:65px;" alt="" />
+            </div>
+            <div class="bot-desc">
+                <p>@x.Aciklama.Substring(0,60)</p> @*substring(0,100) dene ,karaktere göre çalışır*@
+            </div>
+            <div class="clear"></div>
+            
+        }
+    </div>
+    @Html.Action("Partial5", "Default")
+
+  
+</div>
